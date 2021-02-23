@@ -15,6 +15,9 @@ export default {
 <style>
 .example {
   color: red;
+  font-size: 20px;
+  transform: translate(10px, 50px);
 }
+
 </style>
 
