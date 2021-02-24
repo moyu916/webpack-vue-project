@@ -13,6 +13,27 @@ const devConfig = {
         port: 7000,
         open: true
       },
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: [
+            'vue-style-loader',
+            'style-loader',
+            'css-loader'
+          ]
+        },
+        {
+          test: /\.styl(us)?$/,
+          use: [
+            'vue-style-loader',
+            'style-loader',
+            'css-loader',
+            'stylus-loader'
+          ]
+        },
+      ]
+    }
 }
 
 module.exports = merge(commonConfig, devConfig);

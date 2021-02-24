@@ -1,15 +1,20 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-// const { VueLoaderPlugin } = require('vue-loader')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
+// const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-const resolve = dir => path.join(__dirname, '..', dir)
+const resolve = dir => path.join(__dirname, '..', dir);
+
+// // 区分当前环境是 development 还是 production
+// const devMode = process.env.NODE_ENV === 'development';
+
 
 module.exports = {
     // context: path.resolve('./src'),
     entry: resolve('src/main.js'),
     output: {
-        filename: '[name].js',
+        filename: '[name].[contenthash].js',
         path: resolve('dist')
         
     },
@@ -23,23 +28,6 @@ module.exports = {
         {
           test: /\.vue$/,
           loader: 'vue-loader',
-        },
-        {
-          test: /\.css$/,
-          use: [
-            'vue-style-loader',
-            'style-loader',
-            'css-loader'
-          ]
-        },
-        {
-          test: /\.styl(us)?$/,
-          use: [
-            'vue-style-loader',
-            'style-loader',
-            'css-loader',
-            'stylus-loader'
-          ]
         },
         {
           test: /\.(png|svg|jpe?g)$/,
@@ -58,6 +46,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: resolve('index.html')
         }),
-        new VueLoaderPlugin()
+        new CleanWebpackPlugin(),
+        new VueLoaderPlugin(),
       ]
 }
