@@ -43,5 +43,20 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
-      ]
+      ],
+    optimization: {
+      runtimeChunk: {
+        name: 'runtime'
+      },
+      splitChunks: {
+        chunks: 'all',
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            name: 'vendors',
+          }
+        }
+      }
+    }
 }
