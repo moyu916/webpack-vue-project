@@ -17,7 +17,6 @@
     "autoprefixer": "^10.2.4",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
-    "cross-env": "^7.0.3",
     "css-loader": "^5.0.2",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.2.0",
@@ -36,5 +35,8 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.7.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "save-dev": "0.0.1-security",
+    "webpack-bundle-analyzer": "^4.4.0"
+  }
 }

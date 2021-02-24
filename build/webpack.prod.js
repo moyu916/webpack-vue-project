@@ -2,10 +2,12 @@
 const { merge } = require('webpack-merge');
 const commonConfig = require('./webpack.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 
 const prodConfig = {
     mode: 'production',
+    devtool:'cheap-module-source-map',
     module: {
         rules: [
             {
@@ -30,7 +32,8 @@ const prodConfig = {
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'
-          })
+          }),
+        new BundleAnalyzerPlugin()
     ]
 
 }
