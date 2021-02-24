@@ -13,11 +13,6 @@ const resolve = dir => path.join(__dirname, '..', dir);
 module.exports = {
     // context: path.resolve('./src'),
     entry: resolve('src/main.js'),
-    output: {
-        filename: '[name].[contenthash].js',
-        path: resolve('dist')
-        
-    },
     module: {
       rules: [
         {
