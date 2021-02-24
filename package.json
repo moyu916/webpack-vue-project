@@ -1,5 +1,6 @@
 {
   "name": "webpack-proj",
+  "sideEfferts": ["*.css"], 
   "version": "1.0.0",
   "description": "webpack构建vue项目",
   "private": true,

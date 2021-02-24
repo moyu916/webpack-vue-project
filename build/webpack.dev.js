@@ -14,6 +14,9 @@ const devConfig = {
         port: 7000,
         open: true
       },
+    optimization: {
+      usedExports: true
+    },
     module: {
       rules: [
         {
